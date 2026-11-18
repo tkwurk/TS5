@@ -1,0 +1,303 @@
+/* Isolated UI component styles. Uses the design tokens defined in index.css. */
+
+.ui-panel {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--social-bg);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.ui-panel__title {
+  margin: 0 0 0.75rem;
+}
+
+.ui-btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.ui-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui-btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ui-btn--primary:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.ui-btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-h);
+}
+
+.ui-btn--ghost:not(:disabled):hover {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+}
+
+.ui-notice {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+}
+
+.ui-notice--warn {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.ui-notice--error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.ui-badge--ok {
+  color: #16a34a;
+  border-color: rgba(22, 163, 74, 0.4);
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.ui-badge--bad {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.ui-badge--neutral {
+  color: var(--text);
+}
+
+.product-list {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.product-list li {
+  margin: 0.15rem 0;
+}
+
+/* Generic form field primitives (used across panels). */
+.ui-panel input,
+.ui-panel select {
+  font: inherit;
+  font-size: 15px;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  text-align: left;
+}
+
+.ui-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.ui-tab {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.55rem 0.9rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.ui-tab__icon {
+  margin-right: 0.35rem;
+}
+
+.ui-tab:hover {
+  color: var(--text-h);
+}
+
+.ui-tab--active {
+  color: var(--text-h);
+  border-bottom-color: var(--accent);
+}
+
+.table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.table-filter {
+  width: 100%;
+  max-width: 22rem;
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--panel, transparent);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.table-filter:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.table-column-filter {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 6rem;
+  font: inherit;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.data-table th {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ui-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.ui-form-row .ui-field {
+  margin-bottom: 0;
+}
+
+.ui-panel textarea {
+  font: inherit;
+  font-size: 15px;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  resize: vertical;
+}
+
+.ui-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.6rem;
+  margin: 0.75rem 0;
+}
+
+.ui-stat {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.ui-stat__label {
+  font-size: 0.75rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ui-stat__value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-stat--ok .ui-stat__value {
+  color: #16a34a;
+}
+
+.ui-stat--bad .ui-stat__value {
+  color: #ef4444;
+}
+
+.ui-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.25rem 0 0.9rem;
+}
+
+.ui-subtab {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.ui-subtab--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}

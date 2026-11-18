@@ -1,0 +1,61 @@
+.drawer-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.drawer-modal {
+  width: 100%;
+  max-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.drawer-modal h3 {
+  margin: 0;
+  color: var(--text-h);
+}
+
+.drawer-modal__pin {
+  font: inherit;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 2px solid var(--accent-border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+/* ESC/POS pulse bytes for the drawer kick — only present in the print stream. */
+.drawer-kick-print {
+  position: fixed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+  color: transparent;
+}
+
+@media print {
+  body:has(.drawer-kick-print) #root > *:not(.drawer-kick-print) {
+    display: none !important;
+  }
+  .drawer-kick-print {
+    position: static;
+    font-size: 1px;
+    color: #000;
+  }
+}

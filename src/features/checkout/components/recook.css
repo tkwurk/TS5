@@ -1,0 +1,64 @@
+.recook {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--social-bg);
+}
+
+.recook__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.recook__head h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-h);
+}
+
+.recook__head .actions {
+  margin: 0;
+  gap: 0.25rem;
+}
+
+.recook__head .ui-btn {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.85rem;
+}
+
+.recook__list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.recook__list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.recook__list--alert li {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.recook__nums {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.recook__rest {
+  margin-top: 0.4rem;
+}
+
+.recook__rest summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+}

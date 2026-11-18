@@ -1,0 +1,15 @@
+{
+  "name": "pos-ui-lint",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dev-time, rule-based UI checker for the Apps Script POS (no AI, not deployed).",
+  "type": "commonjs",
+  "bin": {
+    "ui-lint": "./ui-lint.js"
+  },
+  "scripts": {
+    "lint": "node ui-lint.js",
+    "lint:strict": "node ui-lint.js --strict",
+    "lint:watch": "node ui-lint.js --watch"
+  }
+}
